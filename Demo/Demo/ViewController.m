@@ -24,12 +24,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIGestureRecognizer *tap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
+    [self.view addGestureRecognizer:tap];
+    
     self.appkeyTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"appkey"];
     self.uploadURLTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"uploadurl"];
     self.stratergyURLTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"configurl"];
     
 }
 
+- (void)onTap {
+    [self.appkeyTextField resignFirstResponder];
+    [self.uploadURLTextField resignFirstResponder];
+    [self.stratergyURLTextField resignFirstResponder];
+    [self.eventNameTextField resignFirstResponder];
+    [self.eventParamsTextField resignFirstResponder];
+    
+}
 
 - (IBAction)onSaveClick:(UIButton *)sender {
     [[NSUserDefaults standardUserDefaults] setObject:self.appkeyTextField.text forKey:@"appkey"];
