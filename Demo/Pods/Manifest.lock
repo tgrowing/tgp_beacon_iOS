@@ -1,0 +1,16 @@
+PODS:
+  - tgp_saas (0.0.1)
+
+DEPENDENCIES:
+  - tgp_saas (from `../`)
+
+EXTERNAL SOURCES:
+  tgp_saas:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  tgp_saas: 162c5763ad78ad1ae294727399622ebf57778c06
+
+PODFILE CHECKSUM: 07ce35687cd7580d8bbb0243ed8cf0b431e5e9d4
+
+COCOAPODS: 1.10.2

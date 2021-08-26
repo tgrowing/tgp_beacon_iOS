@@ -1,0 +1,78 @@
+//
+//  ViewController.m
+//  DEMO
+//
+//  Created by yiqiwang on 2021/3/8.
+//  Copyright © 2021 yiqiwang. All rights reserved.
+//
+
+#import "ViewController.h"
+#import <BeaconAPI_Base/BeaconReport.h>
+
+@interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *appkeyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *uploadURLTextField;
+@property (weak, nonatomic) IBOutlet UITextField *stratergyURLTextField;
+@property (weak, nonatomic) IBOutlet UITextField *eventNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *eventParamsTextField;
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.appkeyTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"appkey"];
+    self.uploadURLTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"uploadurl"];
+    self.stratergyURLTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"configurl"];
+    
+}
+
+
+- (IBAction)onSaveClick:(UIButton *)sender {
+    [[NSUserDefaults standardUserDefaults] setObject:self.appkeyTextField.text forKey:@"appkey"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.uploadURLTextField.text forKey:@"uploadurl"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.stratergyURLTextField.text forKey:@"configurl"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (IBAction)onDirectReportClick:(UIButton *)sender {
+    NSString *eventName = self.eventNameTextField.text;
+    NSString *eventParamsStr = self.eventParamsTextField.text;
+    NSDictionary *params = [self getDictionaryFromJson:eventParamsStr];
+    
+    // 上报实时事件，BeaconEvent对象没有设置appkey参数时，事件上报到调用start初始化接口时传入的appkey
+    BeaconEvent *realTimeEvent = [BeaconEvent realTimeEventWithCode:eventName params:params];
+    [BeaconReport.sharedInstance reportEvent:realTimeEvent];
+}
+
+- (IBAction)onUndirectReportClick:(UIButton *)sender {
+    NSString *eventName = self.eventNameTextField.text;
+    NSString *eventParamsStr = self.eventParamsTextField.text;
+    NSDictionary *params = [self getDictionaryFromJson:eventParamsStr];
+    // 上报普通事件,BeaconEvent对象没有设置appkey参数时，事件上报到调用start初始化接口时传入的appkey
+    BeaconEvent *normalEvent = [BeaconEvent normalEventWithCode:eventName params:params];
+    [BeaconReport.sharedInstance reportEvent:normalEvent];
+}
+
+- (NSDictionary *)getDictionaryFromJson:(NSString *)jsonStr {
+    if (jsonStr.length == 0) {
+        return [NSDictionary new];
+    }
+    NSError *error;
+    NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *retDic = [NSJSONSerialization JSONObjectWithData:data
+                                                           options:NSJSONReadingMutableContainers
+                                                             error:&error];
+    if (error) {
+        self.errorLabel.text = error.localizedDescription;
+        return [NSDictionary new];
+    } else {
+        self.errorLabel.text = nil;
+    }
+    return retDic;
+}
+
+@end
