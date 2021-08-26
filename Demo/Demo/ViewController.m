@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIGestureRecognizer *tap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
+    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
     [self.view addGestureRecognizer:tap];
     
     self.appkeyTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"appkey"];
