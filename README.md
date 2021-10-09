@@ -22,7 +22,7 @@ platform :ios, '9.0'
 target 'BeaconDemo' do
 use_frameworks! 
 
-pod 'Beacon', '~> 4.0'
+pod 'Beacon', '~> 1.0.0'
 
 end
 ```
