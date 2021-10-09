@@ -6,8 +6,7 @@
 
 SDK包：BeaconAPI_Base.framework —基础上报SDK，必选 
 
-选择拷贝需要的framework到您的应用目录下，在Xcode中需要添加的Target中选择 ”Build Phases”->“Link Binary With Libraries”->“Add”->“Add Other”→选择framework目录
-注意：如果是是通过catalyst跨平台支持Mac的话，上述的SDK需要使用后缀为 .xcframework 的framework
+选择拷贝需要的framework到您的应用目录下，在Xcode中需要添加的Target中选择 ”Build Phases”->“Link Binary With Libraries”->“Add”->“Add Other”→选择framework目录。
 
 在Other linker flag里加入-ObjC标志 cocoapods导入 支持使用cocoapods进行包依赖管理集成灯塔上报framework。 
 
@@ -19,10 +18,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '9.0'
 
-target 'BeaconDemo' do
+target 'Demo' do
 use_frameworks! 
 
-pod 'Beacon', '~> 1.0.0'
+pod 'tgp_beacon', '~> 1.0.0'
 
 end
 ```
