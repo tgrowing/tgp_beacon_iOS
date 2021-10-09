@@ -86,8 +86,10 @@ BeaconReport.sharedInstance.openId = @"openId";
 ```
 
 初始化接口tunnelInfo参数进阶：
-```
+
 - (void)startWithTunnelInfo:(BeaconTunnelInfo )tunnelInfo config:(nullable BeaconReportConfig )config
+
+```
 BeaconTunnelInfo *mainTunnelInfo = [BeaconTunnelInfo tunnelInfoWithAppKey:@"LOGDEBUGKEY00001"];//填写上述从灯塔官网申请的appkey,// 使用实时联调2.0时可以填写：LOGDEBUGKEY00001
 // 各业务自己定义的通道版本，主APP一般采用APP的版本，其他业务或者SDK可自行定义
 mainTunnelInfo.version = @"1.0";
