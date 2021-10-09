@@ -33,12 +33,16 @@ end
 #import <BeaconAPI_Base/BeaconReport.h>
 ```
 
-#### 在- (BOOL)application:(UIApplication )application didFinishLaunchingWithOptions:(NSDictionary )launchOptions 初始化SDK
+#### 初始化SDK
+ 
 ```
-// 填写上述从灯塔官网申请的appkey
-// 使用实时联调2.0时可以填写：LOGDEBUGKEY00001
-BeaconTunnelInfo *mainTunnelInfo = [BeaconTunnelInfo tunnelInfoWithAppKey:@"LOGDEBUGKEY00001"];
-[BeaconReport.sharedInstance startWithTunnelInfo:mainTunnelInfo config:nil];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    [BeaconReport.sharedInstance initOstar];    // startWithAppkey 之前必须调用
+    // 填写上述从灯塔官网申请的appkey，使用实时联调2.0时，可以填写AppKey：LOGDEBUGKEY00001
+    [BeaconReport.sharedInstance startWithAppkey:"申请的Appkey" config:nil];
+    return YES;
+}
 ```
 
 #### 至此，SDK已初始化完成，可以开始上报事件

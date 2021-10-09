@@ -6,6 +6,8 @@ target 'Demo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'tgp_saas', :path=> '../'
+  # pod 'tgp_beacon', :path=> '../'
+
+  pod 'tgp_beacon', '~> 1.0.0'
 
 end
