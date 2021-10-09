@@ -1,8 +1,8 @@
 # 接入说明
 
-## SDK
+### SDK引入
 
-### 1.手动引入
+#### 1.手动引入
 
 SDK包：BeaconAPI_Base.framework —基础上报SDK，必选 
 
@@ -10,7 +10,7 @@ SDK包：BeaconAPI_Base.framework —基础上报SDK，必选
 
 在Other linker flag里加入-ObjC标志 cocoapods导入 支持使用cocoapods进行包依赖管理集成灯塔上报framework。 
 
-### 2.cocoapods引入
+#### 2.cocoapods引入
 使用cocoapods的方式，需要在Podfile文件添加腾讯的podspec源，并pod 依赖灯塔SDK，参考如下：
 
 ```
