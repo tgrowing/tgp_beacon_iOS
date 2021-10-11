@@ -122,3 +122,14 @@ BeaconTunnelInfo *tunnelInfo = [BeaconTunnelInfo tunnelInfoWithAppKey:@"LOGDEBUG
 BeaconEvent *event = [[BeaconEvent alloc] initWithAppKey:@"LOGDEBUGKEY00002" code:@"subTunnel_real_time_event_test" type:BeaconEventTypeRealTime success:YES params:@{@"k":@"v"}];
 [BeaconReport.sharedInstance reportEvent:event];
 ```
+### 上报接口的返回码
+```
+typedef NS_ENUM(NSInteger, BeaconResultType) {
+    BeaconResultTypeSuccess = 0,                // 成功
+    BeaconResultTypeIllegalParameters,          // 参数非法，一般是接口入参校验不通过
+    BeaconResultTypeConfigOff,                  // 配置关闭，导致上报失败或者不需要上报
+    BeaconResultTypeParamsExceededLength,       // 参数长度过长
+    BeaconResultTypeSDKNotStarted,              // SDK未初始化就进行上报
+    BeaconResultTypeUnknow,                     // 未知错误
+};
+```
