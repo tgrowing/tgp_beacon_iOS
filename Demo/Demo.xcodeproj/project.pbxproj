@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8AB62CD82754E5B5005A8890 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB62CD72754E5B5005A8890 /* HelpViewController.m */; };
 		A7CF8FDB25F5E61000D0FC3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CF8FDA25F5E61000D0FC3F /* AppDelegate.m */; };
 		A7CF8FE125F5E61000D0FC3F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CF8FE025F5E61000D0FC3F /* ViewController.m */; };
 		A7CF8FE425F5E61000D0FC3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CF8FE225F5E61000D0FC3F /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		45EFFDABCF6A363868AF9E8C /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		8AB62CD62754E5B5005A8890 /* HelpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		8AB62CD72754E5B5005A8890 /* HelpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		A70613404CA90600DB5455F0 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		A7CF8FD625F5E61000D0FC3F /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CF8FD925F5E61000D0FC3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 				A7CF8FE725F5E61100D0FC3F /* LaunchScreen.storyboard */,
 				A7CF8FEA25F5E61100D0FC3F /* Info.plist */,
 				A7CF8FEB25F5E61100D0FC3F /* main.m */,
+				8AB62CD62754E5B5005A8890 /* HelpViewController.h */,
+				8AB62CD72754E5B5005A8890 /* HelpViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				A7CF8FE125F5E61000D0FC3F /* ViewController.m in Sources */,
 				A7CF8FDB25F5E61000D0FC3F /* AppDelegate.m in Sources */,
 				A7CF8FEC25F5E61100D0FC3F /* main.m in Sources */,
+				8AB62CD82754E5B5005A8890 /* HelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,15 +342,17 @@
 			baseConfigurationReference = A70613404CA90600DB5455F0 /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TYELATSY8G;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = FN2V63AD2J;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tgp.beacondemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = com.tencent.tgp.beacondemo_Development_SignProvision;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -356,15 +364,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 88L2Q4487U;
+				DEVELOPMENT_TEAM = HKB8WPFBR9;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.translatedemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.tgp.beacondemo.db;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = com.tencent.translatedemo_Production_SignProvision;
+				PROVISIONING_PROFILE_SPECIFIER = "com.tencent.tgp.beacondemo.db InHouse 1632796345";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

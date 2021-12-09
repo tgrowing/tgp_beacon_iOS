@@ -135,6 +135,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// app安装时间
 @property (assign, readonly) long long appInstallTime;
 
+/// app是否首次启动，跟appkey关联
+@property (nonatomic, assign) BOOL isFirstLaunch;
+
 // 延迟初始化相关需要耗时的参数，需在子线程调用
 - (void)initBaseInfo;
 

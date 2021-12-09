@@ -13,7 +13,6 @@
 
 @property (nonatomic, copy) NSString *appKey;
 @property (nonatomic, copy) NSString *uploadURL;
-@property (nonatomic, copy) NSString *configURL;
 
 @end
 
@@ -31,9 +30,8 @@
 - (void)startBeacon {
     self.appKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"appkey"];
     self.uploadURL = [[NSUserDefaults standardUserDefaults] objectForKey:@"uploadurl"];
-    self.configURL = [[NSUserDefaults standardUserDefaults] objectForKey:@"configurl"];
-    
-    if (!self.appKey) {
+
+    if (!self.appKey || self.appKey.length == 0) {
         return;
     }
     
@@ -41,10 +39,7 @@
     if (self.uploadURL && self.uploadURL.length > 0) {
         reportConfig.uploadURL = self.uploadURL;    // 设置上报域名
     }
-    if (self.configURL && self.configURL.length > 0) {
-        reportConfig.configURL = self.configURL;    // 设置服务域名
-    }
-    
+
     BeaconReport.sharedInstance.channelId = @"channelId";
     BeaconReport.sharedInstance.logLevel = 10;  // 设置本地调试时控制台输出的日志级别
     [BeaconReport.sharedInstance.getCommonParams setAppVersion:@"123"]; //设置appVersion

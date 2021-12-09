@@ -1,16 +1,16 @@
 PODS:
-  - tgp_saas (0.0.1)
+  - tgp_beacon (1.0.0)
 
 DEPENDENCIES:
-  - tgp_saas (from `../`)
+  - tgp_beacon (from `../`)
 
 EXTERNAL SOURCES:
-  tgp_saas:
+  tgp_beacon:
     :path: "../"
 
 SPEC CHECKSUMS:
-  tgp_saas: 162c5763ad78ad1ae294727399622ebf57778c06
+  tgp_beacon: c5c85c788dccaec5b48dd57c4c6b063a9a4fdd23
 
-PODFILE CHECKSUM: 07ce35687cd7580d8bbb0243ed8cf0b431e5e9d4
+PODFILE CHECKSUM: 6bcf63f5e68d3d5ba2891a4d829ecb0a95cf6427
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2

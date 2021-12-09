@@ -12,7 +12,6 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *appkeyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *uploadURLTextField;
-@property (weak, nonatomic) IBOutlet UITextField *stratergyURLTextField;
 @property (weak, nonatomic) IBOutlet UITextField *eventNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *eventParamsTextField;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
@@ -29,24 +28,31 @@
     
     self.appkeyTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"appkey"];
     self.uploadURLTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"uploadurl"];
-    self.stratergyURLTextField.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"configurl"];
-    
 }
 
 - (void)onTap {
     [self.appkeyTextField resignFirstResponder];
     [self.uploadURLTextField resignFirstResponder];
-    [self.stratergyURLTextField resignFirstResponder];
     [self.eventNameTextField resignFirstResponder];
     [self.eventParamsTextField resignFirstResponder];
-    
 }
 
 - (IBAction)onSaveClick:(UIButton *)sender {
     [[NSUserDefaults standardUserDefaults] setObject:self.appkeyTextField.text forKey:@"appkey"];
     [[NSUserDefaults standardUserDefaults] setObject:self.uploadURLTextField.text forKey:@"uploadurl"];
-    [[NSUserDefaults standardUserDefaults] setObject:self.stratergyURLTextField.text forKey:@"configurl"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"保存成功"
+                                                                   message:@"点击确认，重启后即可生效"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+        exit(0);
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)onDirectReportClick:(UIButton *)sender {

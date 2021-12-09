@@ -18,7 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL eventReportEnabled;
 
 /// 开启或者关闭策略请求功能，默认为YES进行策略请求，如果需要关闭，可设置为NO
-@property (nonatomic, assign) BOOL configQueryEnabled;
+/// 策略请求功能已停用，不支持开启
+@property (nonatomic, assign, readonly) BOOL configQueryEnabled;
 
 /// 本地数据库的最大容量（超过限额不予存储），默认10000条，保护区间是100～100000条，云端优先级高于本地设置
 @property (nonatomic, assign) NSInteger maxDBCount;
@@ -32,7 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *uploadURL;
 
 /// 配置服务的域名，一般不需要设置，有特殊需求时找SDK同学对接
-@property (nonatomic, copy, nullable) NSString *configURL;
+/// 策略请求功能已停用，不支持配置地址
+@property (nonatomic, copy, nullable) NSString *configURL __attribute__((deprecated("此方法已废弃，不支持配置策略地址")));
 
 @end
 
