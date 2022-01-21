@@ -21,7 +21,7 @@ platform :ios, '9.0'
 target 'Demo' do
 use_frameworks! 
 
-pod 'tgp_beacon', '~> 1.0.2'
+pod 'tgp_beacon', '~> 1.0.3'
 
 end
 ```
@@ -34,7 +34,7 @@ end
 ```
 
 #### 初始化SDK
- 
+
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -133,3 +133,23 @@ typedef NS_ENUM(NSInteger, BeaconResultType) {
     BeaconResultTypeUnknow,                     // 未知错误
 };
 ```
+
+###扩展功能
+
+#### App 打通 H5
+
+集成了 Web JS SDK 的 H5 页面，在嵌入到 App 后，H5 内的事件可以通过 App 进行发送，事件发送前会添加上 App 采集到的预置属性。该功能默认是关闭状态，如果需要开启，需要在 App 和 H5 端同时进行开启。
+
+```objective-c
+// 在嵌入WKWebView的页面中，创建JsReport对象
+JsReport *jsReport = [JsReport new];
+
+// 开启内嵌H5通过App上报的通路
+[jsReport enableBridge:wkWebView];
+
+// 关闭内嵌H5通过App上报的通路
+[jsReport disableBridge];
+```
+
+
+

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A34E8E12785853E00BAB3AA /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A34E8DF2785853E00BAB3AA /* WebViewController.m */; };
+		8A34E8E327858A2E00BAB3AA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A34E8E227858A2E00BAB3AA /* WebKit.framework */; };
 		8AB62CD82754E5B5005A8890 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB62CD72754E5B5005A8890 /* HelpViewController.m */; };
 		A7CF8FDB25F5E61000D0FC3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CF8FDA25F5E61000D0FC3F /* AppDelegate.m */; };
 		A7CF8FE125F5E61000D0FC3F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CF8FE025F5E61000D0FC3F /* ViewController.m */; };
@@ -19,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		45EFFDABCF6A363868AF9E8C /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		8A34E8DF2785853E00BAB3AA /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		8A34E8E02785853E00BAB3AA /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		8A34E8E227858A2E00BAB3AA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8AB62CD62754E5B5005A8890 /* HelpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		8AB62CD72754E5B5005A8890 /* HelpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		A70613404CA90600DB5455F0 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -40,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A34E8E327858A2E00BAB3AA /* WebKit.framework in Frameworks */,
 				CE08621C389E8DDCA672FBF9 /* Pods_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,13 +87,15 @@
 				A7CF8FDA25F5E61000D0FC3F /* AppDelegate.m */,
 				A7CF8FDF25F5E61000D0FC3F /* ViewController.h */,
 				A7CF8FE025F5E61000D0FC3F /* ViewController.m */,
+				8A34E8E02785853E00BAB3AA /* WebViewController.h */,
+				8A34E8DF2785853E00BAB3AA /* WebViewController.m */,
+				8AB62CD62754E5B5005A8890 /* HelpViewController.h */,
+				8AB62CD72754E5B5005A8890 /* HelpViewController.m */,
 				A7CF8FE225F5E61000D0FC3F /* Main.storyboard */,
 				A7CF8FE525F5E61100D0FC3F /* Assets.xcassets */,
 				A7CF8FE725F5E61100D0FC3F /* LaunchScreen.storyboard */,
 				A7CF8FEA25F5E61100D0FC3F /* Info.plist */,
 				A7CF8FEB25F5E61100D0FC3F /* main.m */,
-				8AB62CD62754E5B5005A8890 /* HelpViewController.h */,
-				8AB62CD72754E5B5005A8890 /* HelpViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -95,6 +103,7 @@
 		F1D1FDC8BFE15E92A3191F09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A34E8E227858A2E00BAB3AA /* WebKit.framework */,
 				B0E4EBDF0DAEE7E46DBAE11D /* Pods_Demo.framework */,
 			);
 			name = Frameworks;
@@ -197,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CF8FE125F5E61000D0FC3F /* ViewController.m in Sources */,
+				8A34E8E12785853E00BAB3AA /* WebViewController.m in Sources */,
 				A7CF8FDB25F5E61000D0FC3F /* AppDelegate.m in Sources */,
 				A7CF8FEC25F5E61100D0FC3F /* main.m in Sources */,
 				8AB62CD82754E5B5005A8890 /* HelpViewController.m in Sources */,
@@ -276,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -329,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -60,10 +60,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, readonly) NSString *language;
 /// 单位GB
 @property (assign, readonly) long long romSize;
-
 /// openuuid 自建
-// @property (copy, readonly) NSString *openUdid;
-
+@property (copy, readonly) NSString *openUdid;
 /// idfv
 @property (copy, readonly) NSString *idfv;
 /// idfa
@@ -135,7 +133,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 与服务器进行时钟同步的时间差
 @property (nonatomic, assign) long serverTimeDelta;
 /// app安装时间
-// @property (assign, readonly) long long appInstallTime;
+@property (assign, readonly) long long appInstallTime;
 
 /// app是否首次启动，跟appkey关联
 @property (nonatomic, assign) BOOL isFirstLaunch;

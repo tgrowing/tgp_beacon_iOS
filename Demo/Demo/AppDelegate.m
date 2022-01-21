@@ -41,9 +41,9 @@
     }
 
     BeaconReport.sharedInstance.channelId = @"channelId";
-    BeaconReport.sharedInstance.logLevel = 10;  // 设置本地调试时控制台输出的日志级别
-    [BeaconReport.sharedInstance.getCommonParams setAppVersion:@"123"]; //设置appVersion
+    BeaconReport.sharedInstance.logLevel = 5;  // 设置本地调试时控制台输出的日志级别
     BeaconReport.sharedInstance.strictMode = YES; // 开发调试阶段，打开严苛模式，可以发现一些致命的基础问题，上线时必须关闭
+    [BeaconReport.sharedInstance.getCommonParams setAppVersion:@"123"]; //设置appVersion
     [BeaconReport.sharedInstance setAdditionalParams:@{@"addKey1" : @"addValue1" , @"app_pos" : @(0)} forAppKey:self.appKey];
     [BeaconReport.sharedInstance initOstar];    // startWithAppkey 之前必须调用
     [BeaconReport.sharedInstance startWithAppkey:self.appKey config:reportConfig];
