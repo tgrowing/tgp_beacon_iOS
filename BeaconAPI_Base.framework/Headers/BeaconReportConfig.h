@@ -29,7 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 普通事件上报的轮询间隔，默认5s，允许区间是[1,50]s
 @property (nonatomic, assign) NSInteger normalEventPollingInterval;
 
-/// 事件上报服务的域名，一般不需要设置，有特殊需求时找SDK同学对接
+/// 事件上报服务的域名
+/// 默认为SASS上报服务的域名，私有化部署需要特殊设置
 @property (nonatomic, copy, nullable) NSString *uploadURL;
 
 /// 配置服务的域名，一般不需要设置，有特殊需求时找SDK同学对接

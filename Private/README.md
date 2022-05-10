@@ -21,7 +21,7 @@ platform :ios, '9.0'
 target 'Demo' do
 use_frameworks! 
 
-pod 'tgp_beacon', '~> 1.0.3'
+pod 'tgp_beacon', '~> 1.0.6'
 
 end
 ```
