@@ -69,7 +69,7 @@ BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:@"normal_event_code_t
 - 进入到应用
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step4.png)
 - 登记事件（创建登记事件或查看登记事件）
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step4.png)
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step5.png)
 - 上报代码demo展示
 ```objc
 // 参数
