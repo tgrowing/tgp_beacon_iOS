@@ -73,7 +73,7 @@ end
 }
 ```
 Appkey获取渠道之一：
-- 一DataInsight官网地址 [https://growth.qq.com](https://growth.qq.com/)
+- DataInsight官网地址 [https://growth.qq.com](https://growth.qq.com/)
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step3.png)
 
 
@@ -83,7 +83,6 @@ Appkey获取渠道之一：
 
 ```objc
 NSDictionary *params = @{@"key1" : @"event_value1", @"key2" : @"event_value2"};
-
 
 // 上报实时事件
 // 实时事件，间隔 2 秒启动上报，2 秒内的其他实时事件会合并到当前队列一起上报
@@ -116,10 +115,7 @@ BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:normal_event_code_tes
 [BeaconReport.sharedInstance reportEvent:normalEvent];
 ```
 ### 查看上报数据
-- 填写上报式例
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step16%20.png)
 
-- 查看上报
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step9.png)
 
 #### 初始化接口进阶
@@ -171,6 +167,10 @@ typedef NS_ENUM(NSInteger, BeaconResultType) {
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step7.png)
 3、双击（打开）生成的Demo.xcworkspace，运行即可
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step8.png)
+4、参数填写示例
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step16%20.png)
+5、查看上报
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step9.png)
 
 
 设置一些全局的ID
