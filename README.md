@@ -223,7 +223,7 @@ BeaconEvent *event = [[BeaconEvent alloc] initWithAppKey:@"LOGDEBUGKEY00002" cod
 ```
 
 
-###扩展功能
+### 扩展功能
 
 #### App 打通 H5
 
