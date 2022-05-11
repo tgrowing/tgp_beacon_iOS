@@ -117,7 +117,7 @@ BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:normal_event_code_tes
 ```
 ### 查看上报数据
 - 填写上报式例
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step14.png)
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step16%20.png)
 
 - 查看上报
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step9.png)
