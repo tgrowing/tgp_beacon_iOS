@@ -22,7 +22,7 @@ platform :ios, '9.0'
 target 'Demo' do
 use_frameworks! 
 
-pod 'tgp_beacon', '~> 1.0.5'
+pod 'tgp_beacon', '~> 1.0.6'
 
 end
 ```
@@ -46,6 +46,7 @@ end
 }
 ```
 Appkey获取渠道之一：
+- 一DataInsight官网地址 [https://growth.qq.com](https://growth.qq.com/)
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step3.png)
 
 
@@ -61,6 +62,26 @@ BeaconEvent *realTimeEvent = [BeaconEvent realTimeEventWithCode:@"real_time_even
 // 上报普通事件
 // 普通事件会缓存在内存一段时间后写入数据库，间隔 5 秒启动上报
 BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:@"normal_event_code_test" params:params];
+[BeaconReport.sharedInstance reportEvent:normalEvent];
+
+```
+#### 上报demo展示
+- 进入到应用
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step4.png)
+- 登记事件（创建登记事件或查看登记事件）
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step4.png)
+- 上报代码demo展示
+```objc
+// 参数
+NSDictionary *params = @{"button_name": "report_button1"};
+// 事件code
+NSString *normal_event_code_test = @"testDemoButtonClick"; 
+// 上报实时事件
+BeaconEvent *realTimeEvent = [BeaconEvent realTimeEventWithCode:normal_event_code_test params:params];
+[BeaconReport.sharedInstance reportEvent:realTimeEvent];
+
+// 上报普通事件
+BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:normal_event_code_test params:params];
 [BeaconReport.sharedInstance reportEvent:normalEvent];
 ```
 
@@ -94,6 +115,17 @@ config.collectIdfvEnable = YES;
 
 BeaconReport.sharedInstance.config = config;
 //其余相关配置参考BeaconReportConfig接口说明
+```
+### 上报接口的返回码
+```objc
+typedef NS_ENUM(NSInteger, BeaconResultType) {
+    BeaconResultTypeSuccess = 0,                // 成功
+    BeaconResultTypeIllegalParameters,          // 参数非法，一般是接口入参校验不通过
+    BeaconResultTypeConfigOff,                  // 配置关闭，导致上报失败或者不需要上报
+    BeaconResultTypeParamsExceededLength,       // 参数长度过长
+    BeaconResultTypeSDKNotStarted,              // SDK未初始化就进行上报
+    BeaconResultTypeUnknow,                     // 未知错误
+};
 ```
 
 设置一些全局的ID
@@ -144,17 +176,7 @@ BeaconTunnelInfo *tunnelInfo = [BeaconTunnelInfo tunnelInfoWithAppKey:@"LOGDEBUG
 BeaconEvent *event = [[BeaconEvent alloc] initWithAppKey:@"LOGDEBUGKEY00002" code:@"subTunnel_real_time_event_test" type:BeaconEventTypeRealTime success:YES params:@{@"k":@"v"}];
 [BeaconReport.sharedInstance reportEvent:event];
 ```
-### 上报接口的返回码
-```objc
-typedef NS_ENUM(NSInteger, BeaconResultType) {
-    BeaconResultTypeSuccess = 0,                // 成功
-    BeaconResultTypeIllegalParameters,          // 参数非法，一般是接口入参校验不通过
-    BeaconResultTypeConfigOff,                  // 配置关闭，导致上报失败或者不需要上报
-    BeaconResultTypeParamsExceededLength,       // 参数长度过长
-    BeaconResultTypeSDKNotStarted,              // SDK未初始化就进行上报
-    BeaconResultTypeUnknow,                     // 未知错误
-};
-```
+
 
 ###扩展功能
 
