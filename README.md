@@ -2,7 +2,7 @@
 ##### 1. 事件模型（Event Model）
 事件模型（Event Model）是以事件为基本研究对象，用来定义和描述一个用户在某个时间通过某种方式完成某个行为。事件的划分和定义，可以反映上报日志的名称和内在数据结构，需要业务根据自身情况需求进行合理设置
 在事件模型中，定义的事件包括以下类型的信息。
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step12.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step12.png)
 
 What： 描述用户所做的这个事件的具体内容。在平台中，会通过日志里的 eventCode 来区分用户的不同行为，例如登录、播放、购买、页面访问等。
 
@@ -32,7 +32,7 @@ Params： 即用户从事这个事件的方式。这个概念比较广，包括�
 #### 1.手动引入
 
 SDK包：BeaconAPI_Base.framework —基础上报SDK，必选 
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step1.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step1.png)
 
 选择拷贝需要的framework到您的应用目录下，在Xcode中需要添加的Target中选择 ”Build Phases”->“Link Binary With Libraries”->“Add”->“Add Other”→选择framework目录。
 
@@ -74,7 +74,7 @@ end
 ```
 Appkey获取渠道之一：
 - DataInsight官网地址 [https://growth.qq.com](https://growth.qq.com/)
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step3.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step3.png)
 
 
 #### 至此，SDK已初始化完成，可以开始上报事件
@@ -97,9 +97,9 @@ BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:@"normal_event_code_t
 ```
 #### 上报事件代码展示
 - 进入到应用
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step4.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step4.png)
 - 登记事件（创建登记事件或查看登记事件）
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step5.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step5.png)
 - 上报代码demo展示
 ```objc
 // 参数
@@ -116,7 +116,7 @@ BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:normal_event_code_tes
 ```
 ### 查看上报数据
 
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step9.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step9.png)
 
 #### 初始化接口进阶
 
@@ -162,15 +162,15 @@ typedef NS_ENUM(NSInteger, BeaconResultType) {
 ```
 ### 本地启动demo操作流程
 1、进入到Demo目录下
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step6.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step6.png)
 2、在Demo目录下，执行pod install,安装完成如下图展示
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step7.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step7.png)
 3、双击（打开）生成的Demo.xcworkspace，运行即可
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step8.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step8.png)
 4、参数填写示例
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step16%20.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step16%20.png)
 5、查看上报
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step9.png)
+![image.png](https://resource.growth.qq.com/sdk/images/github-readme-images//step9.png)
 
 
 设置一些全局的ID
