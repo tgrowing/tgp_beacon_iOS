@@ -65,7 +65,7 @@ BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:@"normal_event_code_t
 [BeaconReport.sharedInstance reportEvent:normalEvent];
 
 ```
-#### 上报demo展示
+#### 上报事件代码展示
 - 进入到应用
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step4.png)
 - 登记事件（创建登记事件或查看登记事件）
@@ -127,6 +127,14 @@ typedef NS_ENUM(NSInteger, BeaconResultType) {
     BeaconResultTypeUnknow,                     // 未知错误
 };
 ```
+### 本地启动demo操作流程
+1、进入到Demo目录下
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step6.png)
+2、在Demo目录下，执行pod install,安装完成如下图展示
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step7.png)
+3、双击（打开）生成的Demo.xcworkspace，运行即可
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step8.png)
+
 
 设置一些全局的ID
 
