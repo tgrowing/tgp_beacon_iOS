@@ -103,7 +103,7 @@ BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:@"normal_event_code_t
 - 上报代码demo展示
 ```objc
 // 参数
-NSDictionary *params = @{"button_name": "report_button1"};
+NSDictionary *params = @{@"button_name": @"report_button1"};
 // 事件code
 NSString *normal_event_code_test = @"testDemoButtonClick"; 
 // 上报实时事件
