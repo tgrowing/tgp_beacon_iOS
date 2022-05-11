@@ -116,10 +116,10 @@ BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:normal_event_code_tes
 [BeaconReport.sharedInstance reportEvent:normalEvent];
 ```
 ### 查看上报数据
--填写上报式例
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step10.png)
+- 填写上报式例
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step14.png)
 
--查看上报
+- 查看上报
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/datainsight/test/images/step9.png)
 
 #### 初始化接口进阶
