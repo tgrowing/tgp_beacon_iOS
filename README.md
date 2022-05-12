@@ -32,7 +32,7 @@ Params： 即用户从事这个事件的方式。这个概念比较广，包括�
 #### 1.手动引入
 
 SDK包：BeaconAPI_Base.framework —基础上报SDK，必选 
-![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step1.png)
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step18.png)
 
 选择拷贝需要的framework到您的应用目录下，在Xcode中需要添加的Target中选择 ”Build Phases”->“Link Binary With Libraries”->“Add”->“Add Other”→选择framework目录。
 
