@@ -174,7 +174,7 @@ typedef NS_ENUM(NSInteger, BeaconResultType) {
 ### 本地启动demo操作流程
 1、进入到Demo目录下
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step6.png)
-2、在Demo目录下，执行pod install,安装完成如下图展示
+2、在Demo目录下，执行pod install --repo-update,安装完成如下图展示
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step7.png)
 3、双击（打开）生成的Demo.xcworkspace，运行即可
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step8.png)
