@@ -87,7 +87,7 @@ Beacon_CLASS_DEPRECATED_APP(1.0.0, 3.2.0, "推荐使用BeaconReport类")
 //设置事件上报的最大累计上报条数（满足条数即上报)，及本地数据库的最大容量（超过限额不予存储）
 //默认分别为20 10000，保护区间10～100, 100～10000
 //注意：采用默认调用方式，sdk会在与服务器通讯获取策略后更新本地策略，所以该模式下调用该API无效
-+ (BOOL)setStrategyForMaxPkgSize:(int)maxPkgSize dbMaxSize:(int)dbMaxSize;
++ (BOOL)setStrategyForMaxPkgSize:(int)maxPkgSize maxDBCount:(int)maxDBCount;
 
 //登录事件
 + (BOOL)onLogin: (BOOL) isSucceed elapse:(long) elapse size:(long) size params:(NSDictionary *) params;

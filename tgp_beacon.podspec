@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
   spec.name         = "tgp_beacon"
  
    # pod 库的版本号，需要和远程仓库的 tag 保持一致
-  spec.version      = "1.0.6"
+  spec.version      = "2.0.1"
  
    # pod 库的简介，最多140个字符
   spec.summary      = "tgp beacon framework, aim to growth."
@@ -37,7 +37,7 @@ Pod::Spec.new do |spec|
                         LICENSE
                         }
   # pod 库的作者信息
-  spec.author             = { "zacardfang" => "zacardfang@tencent.com" }
+  spec.author             = { "sherryssong" => "sherryssong@tencent.com" }
   
    # pod 库支持的平台和最低版本
   spec.platform     = :ios, "9.0"

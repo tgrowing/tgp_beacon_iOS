@@ -89,6 +89,13 @@ extern BOOL BeaconHasStarted;
 /// @param appKey 各业务在灯塔平台申请的业务唯一标识
 - (void)setOpenId:(NSString *)openId forAppKey:(NSString *)appKey;
 
+/// 恢复上报
+- (void)resumeReport;
+
+/// 停止上报，调用后会暂停轮询任务
+///  @param immediately 如果为true则会马上中断正在进行的任务，false则会等待任务完成后再停止轮询
+- (void)stopReport:(BOOL)immediately;
+
 ///
 /**
  * 初始化O16和O36参数
@@ -107,7 +114,7 @@ extern BOOL BeaconHasStarted;
 NS_ASSUME_NONNULL_END
 
 
-#define BEACON_SDK_VERSION @"4.2.65"
+#define BEACON_SDK_VERSION @"V2.1.0"
 
 /// 智能增长的灯塔SDK版本
-#define TGP_SDK_VERSION @"1.0.6"
+#define TGP_SDK_VERSION @"1.0.3"

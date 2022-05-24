@@ -27,4 +27,6 @@
 /// 如果定时器没有开启，则开启定时器轮询
 - (void)openTimerAgain;
 
+/// 当超过最大存储阈值时，取出历史最早的一批数据，并删除
+- (BOOL)deleteStorageEvent;
 @end

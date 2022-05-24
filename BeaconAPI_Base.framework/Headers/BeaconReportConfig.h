@@ -33,6 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 默认为SASS上报服务的域名，私有化部署需要特殊设置
 @property (nonatomic, copy, nullable) NSString *uploadURL;
 
+/// 事件轮询上传开关,默认打开. 关闭后业务生成的事件会入库,但不上传到服务端,达到DB上限后丢弃剩余事件.
+@property (nonatomic, assign) BOOL eventUploadEnabled;
+
+/// 网络服务上报，默认打开
+@property (nonatomic, assign) BOOL eventUploadNetEnabled;
+
 /// 配置服务的域名，一般不需要设置，有特殊需求时找SDK同学对接
 /// 策略请求功能已停用，不支持配置地址
 @property (nonatomic, copy, nullable) NSString *configURL __attribute__((deprecated("此方法已废弃，不支持配置策略地址")));
