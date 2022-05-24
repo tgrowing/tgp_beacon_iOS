@@ -8,6 +8,6 @@ target 'Demo' do
 
   # pod 'tgp_beacon', :path=> '../'
 
-  pod 'tgp_beacon', '~> 2.1.1'
+  pod 'tgp_beacon', '~> 2.0.1'
 
 end

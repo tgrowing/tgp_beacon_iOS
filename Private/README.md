@@ -23,7 +23,7 @@ platform :ios, '9.0'
 target 'Demo' do
 use_frameworks! 
 
-pod 'tgp_beacon', '~> 2.1.1'
+pod 'tgp_beacon', '~> 2.0.1'
 
 end
 ```
@@ -59,7 +59,7 @@ BeaconEvent *realTimeEvent = [BeaconEvent realTimeEventWithCode:@"real_time_even
 BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:@"normal_event_code_test" params:params];
 [BeaconReport.sharedInstance reportEvent:normalEvent];
 ```
-#### 停止上报、恢复上报(2.1.1版本新增功能！！！）
+#### 停止上报、恢复上报(2.0.1版本新增功能！！！）
 ```objc
 /// 停止上报, immediately为YES则会马上中断正在进行的任务，NO则会等待任务完成后再停止轮询
 /// 停止上报
@@ -183,7 +183,7 @@ JsReport *jsReport = [JsReport new];
 
 #SDK更新日志
 ## 2022年05月24日
-### V2.1.1 
+### V2.0.1 
 - 停止上报, immediately为YES则会马上中断正在进行的任务，NO则会等待任务完成后再停止轮询
 - 恢复上报
 -  添加重试策略，上报失败后开启重试请求策略，请求的时间间隔会逐渐增加
