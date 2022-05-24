@@ -6,6 +6,8 @@
 
 SDK包：BeaconAPI_Base.framework —基础上报SDK，必选 
 
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step18.png)
+
 选择拷贝需要的framework到您的应用目录下，在Xcode中需要添加的Target中选择 ”Build Phases”->“Link Binary With Libraries”->“Add”->“Add Other”→选择framework目录。
 
 在Other linker flag里加入-ObjC标志 cocoapods导入 支持使用cocoapods进行包依赖管理集成灯塔上报framework。 
@@ -21,7 +23,7 @@ platform :ios, '9.0'
 target 'Demo' do
 use_frameworks! 
 
-pod 'tgp_beacon', '~> 2.0.1'
+pod 'tgp_beacon', '~> 2.1.1'
 
 end
 ```
@@ -57,7 +59,7 @@ BeaconEvent *realTimeEvent = [BeaconEvent realTimeEventWithCode:@"real_time_even
 BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:@"normal_event_code_test" params:params];
 [BeaconReport.sharedInstance reportEvent:normalEvent];
 ```
-#### 停止上报、恢复上报
+#### 停止上报、恢复上报(2.1.1版本新增功能！！！）
 ```objc
 /// 停止上报, immediately为YES则会马上中断正在进行的任务，NO则会等待任务完成后再停止轮询
 /// 停止上报
@@ -114,7 +116,7 @@ BeaconReport.sharedInstance.openId = @"openId";
 
 - (void)startWithTunnelInfo:(BeaconTunnelInfo )tunnelInfo config:(nullable BeaconReportConfig )config
 
-```
+```objc
 BeaconTunnelInfo *mainTunnelInfo = [BeaconTunnelInfo tunnelInfoWithAppKey:@"LOGDEBUGKEY00001"];//填写上述从灯塔官网申请的appkey,// 使用实时联调2.0时可以填写：LOGDEBUGKEY00001
 // 各业务自己定义的通道版本，主APP一般采用APP的版本，其他业务或者SDK可自行定义
 mainTunnelInfo.version = @"1.0";
@@ -181,7 +183,7 @@ JsReport *jsReport = [JsReport new];
 
 #SDK更新日志
 ## 2022年05月24日
-### V2.0.1 
+### V2.1.1 
 - 停止上报, immediately为YES则会马上中断正在进行的任务，NO则会等待任务完成后再停止轮询
 - 恢复上报
 -  添加重试策略，上报失败后开启重试请求策略，请求的时间间隔会逐渐增加
