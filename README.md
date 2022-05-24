@@ -195,45 +195,6 @@ BeaconReport.sharedInstance.omgId = @"omgId";
 BeaconReport.sharedInstance.openId = @"openId";
 ```
 
-初始化接口tunnelInfo参数进阶：
-```objc
-- (void)startWithTunnelInfo:(BeaconTunnelInfo )tunnelInfo config:(nullable BeaconReportConfig )config
-```
-```objc
-BeaconTunnelInfo *mainTunnelInfo = [BeaconTunnelInfo tunnelInfoWithAppKey:@"LOGDEBUGKEY00001"];//填写上述从灯塔官网申请的appkey,// 使用实时联调2.0时可以填写：LOGDEBUGKEY00001
-// 各业务自己定义的通道版本，主APP一般采用APP的版本，其他业务或者SDK可自行定义
-mainTunnelInfo.version = @"1.0";
-// 当前通道登录用户的ID
-mainTunnelInfo.userId = @"userId_test";
-// 渠道ID
-mainTunnelInfo.channelId = @"chainId_test";
-// 初始化时机，添加上报的事件的附加参数,同一个appkey通道的每个事件都会上报这些参数
-mainTunnelInfo.additionalParams = @{@"additionalKey1" : @"additional_value1", @"additionalKey2" : @"additional_value2"};
-[BeaconReport.sharedInstance startWithTunnelInfo:mainTunnelInfo config:nil];
-```
-
-非初始化时机需要追加附加参数
-```objc
-NSString *appKey = @"LOGDEBUGKEY00001"; 
-[BeaconReport.sharedInstance addAdditionalParams:@{@"addKey1" : @"addValue1"} forAppKey:appKey];
-```
-
-#### 上报功能进阶-多通道
-
-注册子通道
-```objc
-// 注册子通道上报
-BeaconTunnelInfo *tunnelInfo = [BeaconTunnelInfo tunnelInfoWithAppKey:@"LOGDEBUGKEY00002"];
-[BeaconReport.sharedInstance registerSubTunnel:tunnelInfo];
-```
-
-上报事件到子通道
-```objc
-BeaconEvent *event = [[BeaconEvent alloc] initWithAppKey:@"LOGDEBUGKEY00002" code:@"subTunnel_real_time_event_test" type:BeaconEventTypeRealTime success:YES params:@{@"k":@"v"}];
-[BeaconReport.sharedInstance reportEvent:event];
-```
-
-
 ### 扩展功能
 
 #### App 打通 H5
@@ -250,7 +211,7 @@ JsReport *jsReport = [JsReport new];
 // 关闭内嵌H5通过App上报的通路
 [jsReport disableBridge];
 ```
-#SDK更新日志
+# SDK更新日志
 ## 2022年05月24日
 ### V2.1.0 
 - 停止上报, immediately为YES则会马上中断正在进行的任务，NO则会等待任务完成后再停止轮询
