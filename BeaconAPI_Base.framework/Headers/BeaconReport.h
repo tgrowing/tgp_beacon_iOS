@@ -117,4 +117,4 @@ NS_ASSUME_NONNULL_END
 #define BEACON_SDK_VERSION @"V2.1.0"
 
 /// 智能增长的灯塔SDK版本
-#define TGP_SDK_VERSION @"1.0.3"
+#define TGP_SDK_VERSION @"V2.1.0"
