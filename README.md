@@ -96,16 +96,7 @@ BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:@"normal_event_code_t
 [BeaconReport.sharedInstance reportEvent:normalEvent];
 
 ```
-#### 停止上报、恢复上报(2.1.0版本新增功能！！！）
-```objc
-/// 停止上报, immediately为YES则会马上中断正在进行的任务，NO则会等待任务完成后再停止轮询
-/// 停止上报
-[BeaconReport.sharedInstance stopReport:YES];
-/// 立即停止上报
-[BeaconReport.sharedInstance stopReport:NO];
-//恢复上报
-[BeaconReport.sharedInstance resumeReport];
-```
+
 #### 上报事件代码展示
 - 进入到应用
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step4.png)
@@ -160,17 +151,7 @@ config.collectIdfvEnable = YES;
 BeaconReport.sharedInstance.config = config;
 //其余相关配置参考BeaconReportConfig接口说明
 ```
-### 上报接口的返回码
-```objc
-typedef NS_ENUM(NSInteger, BeaconResultType) {
-    BeaconResultTypeSuccess = 0,                // 成功
-    BeaconResultTypeIllegalParameters,          // 参数非法，一般是接口入参校验不通过
-    BeaconResultTypeConfigOff,                  // 配置关闭，导致上报失败或者不需要上报
-    BeaconResultTypeParamsExceededLength,       // 参数长度过长
-    BeaconResultTypeSDKNotStarted,              // SDK未初始化就进行上报
-    BeaconResultTypeUnknow,                     // 未知错误
-};
-```
+
 ### 本地启动demo操作流程
 1、进入到Demo目录下
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step6.png)
@@ -211,6 +192,17 @@ JsReport *jsReport = [JsReport new];
 // 关闭内嵌H5通过App上报的通路
 [jsReport disableBridge];
 ```
+#### 停止上报、恢复上报(2.1.0版本新增功能！！！）
+```objc
+/// 停止上报, immediately为YES则会马上中断正在进行的任务，NO则会等待任务完成后再停止轮询
+/// 停止上报
+[BeaconReport.sharedInstance stopReport:YES];
+/// 立即停止上报
+[BeaconReport.sharedInstance stopReport:NO];
+//恢复上报
+[BeaconReport.sharedInstance resumeReport];
+```
+
 # SDK更新日志
 ## 2022年05月24日
 ### V2.1.0 
