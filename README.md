@@ -73,9 +73,12 @@ end
     return YES;
 }
 ```
-Appkey获取渠道之一：
-- DataInsight官网地址 [https://growth.qq.com](https://growth.qq.com/)
+
+Appkey获取渠道如下：
+- 渠道一：【数据管家】
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step3.png)
+- 渠道二：【应用管理】
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/get_appkey_step2.png)
 
 
 #### 至此，SDK已初始化完成，可以开始上报事件
@@ -116,6 +119,10 @@ BeaconEvent *realTimeEvent = [BeaconEvent realTimeEventWithCode:normal_event_cod
 BeaconEvent *noralEvent = [BeaconEvent normalEventWithCode:normal_event_code_test params:params];
 [BeaconReport.sharedInstance reportEvent:normalEvent];
 ```
+- 上报状态获取
+1、可以在debug模式下，查看日志，出现`【BeaconUploader】event success with 200`表示上报成功
+![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/ios_upload_success.png)
+2、直接查看【实时行为日志】，有上报数据代表上报成功
 ### 查看上报数据
 
 ![image.png](https://tencent-growth-platform-1251316161.cos.ap-beijing.myqcloud.com/sdk/images/github-readme-images/step9.png)
