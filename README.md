@@ -50,7 +50,7 @@ platform :ios, '9.0'
 target 'Demo' do
 use_frameworks! 
 
-pod 'tgp_beacon', '~> 2.1.0'
+pod 'tgp_beacon', '~> 2.1.2'
 
 end
 ```
