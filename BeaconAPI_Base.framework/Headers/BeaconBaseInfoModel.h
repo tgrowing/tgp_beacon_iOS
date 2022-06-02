@@ -139,6 +139,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// app是否首次启动，跟appkey关联
 @property (nonatomic, assign) BOOL isFirstLaunch;
+/// 当前页面path
+@property (copy) NSString *curPageUrl;
+/// 当前页面来源
+@property (copy) NSString *curPageReferrerURL;
+// 当前页面来源开始事件
+@property (nonatomic, assign) NSTimeInterval curPageStartTimestamp;
 
 // 延迟初始化相关需要耗时的参数，需在子线程调用
 - (void)initBaseInfo;

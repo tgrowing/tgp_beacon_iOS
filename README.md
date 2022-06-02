@@ -68,8 +68,11 @@ end
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [BeaconReport.sharedInstance initOstar];    // startWithAppkey 之前必须调用
-    // 填写上述从灯塔官网申请的appkey，使用实时联调2.0时，可以填写AppKey：LOGDEBUGKEY00001
-    [BeaconReport.sharedInstance startWithAppkey:"申请的Appkey" config:nil];
+    BeaconReportConfig *reportConfig = [BeaconReportConfig new];
+    // 私有化部署 初始化必须配置上报地址！！！否则走默认的saas上报地址
+    reportConfig.uploadURL = @"上报的url地址";
+    // 填写从灯塔官网申请的appkey
+    [BeaconReport.sharedInstance startWithAppkey:"申请的Appkey" config:reportConfig];
     return YES;
 }
 ```
@@ -211,9 +214,16 @@ JsReport *jsReport = [JsReport new];
 ```
 
 # SDK更新日志
+
+## 2022年06月01日
+
+### V2.1.2 
+- 新增预置事件：sdk初始化（app_init）、页面访问（app_pv）、页面关闭（app_unpv）、APP退出（app_end）
+- 新增预置参数：页面路径（page_path）、跳转来源（source）、页面访问时长（view_duration）、APP访问时长（app_interval）
+
+----------------------------
 ## 2022年05月24日
 ### V2.1.0 
-- 停止上报, immediately为YES则会马上中断正在进行的任务，NO则会等待任务完成后再停止轮询
-- 恢复上报
--  添加重试策略，上报失败后开启重试请求策略，请求的时间间隔会逐渐增加
+- 新增停止上报和恢复上报API
+- 新增重试策略，上报失败后开启重试请求策略，请求的时间间隔 = 初始上报间隔 * 2^(上报失败次数)
 - 支持设置上报最大存储条数，默认是10000条，区间是10000～50000
