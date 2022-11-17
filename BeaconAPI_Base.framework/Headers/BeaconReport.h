@@ -107,14 +107,14 @@ extern BOOL BeaconHasStarted;
 /// 获取所有灯塔已默认采集的公参
 - (BeaconBaseInfoModel *)getCommonParams;
 
-///Socket上报开启/关闭接口，默认YES，如果需要关闭则需要设置为NO
+///Socket上报开启/关闭接口，默认NO，如果需要关闭则需要设置为NO
 - (void)setSocketOnOff:(BOOL)yesOrNo;
  
 @end
 NS_ASSUME_NONNULL_END
 
 
-#define BEACON_SDK_VERSION @"V2.1.2"
+#define BEACON_SDK_VERSION @"V2.2.0"
 
 /// 智能增长的灯塔SDK版本
-#define TGP_SDK_VERSION @"V2.1.2"
+#define TGP_SDK_VERSION @"V2.2.0"
